@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>User Data</title>
+  </head>
+
+  <body>
+    <main class="mt-5 pt-3" >
+      <div class="container" >
+        <div class="h1 my-4 text-center">User Data</div>
+        <div class="row my-5">
+          <div class="card" id="container">
+            <div class="card-header fw-bolder h5 text-uppercase">
+              Roll No - <span id="rollno">123</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold text-uppercase">
+                <span id="firstName">AAAA</span>
+                <span id="lastName">BBBB</span>
+              </h5>
+              
+              <hr />
+              
+              <small class="text-uppercase fw-bold text-muted">
+                Contact Information
+              </small>
+              <hr />
+              <p class="card-text fs-6 fw-bold">
+                <i class="bi bi-envelope me-2"></i>
+                Email -<span id="email">Email@gmail.com</span>
+              </p>
+              <p class="card-text fs-6 fw-bold">
+                <i class="bi bi-telephone me-2"></i>
+                Mobile No -<span id="contactNo">9878743434</span>
+              </p>
+
+              <small class="text-uppercase fw-bold text-muted">
+                College Information
+              </small>
+              <hr />
+              <p class="card-text fs-6 fw-bold">
+                <i class="bi bi-book me-2"></i>
+                Branch -<span id="branch">IT</span>
+              </p>
+             </div>
+          </div>
+          <button id="gotomainpage" onclick="gotomainpage()">Go to Main Page</button>
+        </div>
+      </div>
+
+    </main>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/myscript.js"></script>
+  </body>
+</html>
