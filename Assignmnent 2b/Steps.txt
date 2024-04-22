@@ -1,0 +1,20 @@
+Create a folder folder_name
+Create any file with any extension like x.js
+
+x.js :
+
+  console.log("Name: Yogesh Borhade");
+  console.log("Class: TE");
+  console.log("Subject: LP-II Web Application Development");
+  console.log("We are implementing Assignment-2B");
+
+Create file in the same folder with file name as- Dockerfile without any extension
+ Write following code in Dockerfile (Created in Step-3) and save it.:
+  FROM node: alpine
+  COPY . /folder_name
+  CMD node /foldername/x.js
+
+docker --version
+node yogesh.js
+docker build -t folder_name
+docker images
