@@ -1,25 +1,24 @@
-const { MongoClient } = require('mongodb');
+const mongodb = require('mongodb');
 
-const username = "krishnapensalwar";
-const password = "Krish@19"; // Update with your actual password
-const clusterName = "cluster0";
-const database = "student";
+const mongodbUrl = `mongodb+srv://krishnapensalwar3:SkDjXfDygdDUSvwN@cluster0.vgiedtl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const MongoClient = mongodb.MongoClient;
 
-// Construct the MongoDB connection URI with proper encoding
-const uri = `mongodb+srv://${username}:${encodeURIComponent(password)}@${clusterName}.wgsrqie.mongodb.net/${database}?retryWrites=true&w=majority`;
+let database;
 
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-const dbConnect = async () => {
-    try {
-        await client.connect();
-        const db = client.db(database);
-        console.log("DB Connected");
-        return db.collection('profile');
-    } catch (error) {
-        console.error("Error connecting to MongoDB:", error);
-        throw error; // Re-throw the error to indicate connection failure
-    }
+async function connectToDatabase() {
+    const client = await MongoClient.connect(mongodbUrl);
+    database = client.db();
 }
 
-module.exports = dbConnect;
+function getDb() {
+  if (!database) {
+    throw { message: 'You must connect first!' };
+  }
+  return database;
+}
+
+module.exports = {
+  connectToDatabase: connectToDatabase,
+  getDb: getDb,
+};
+
